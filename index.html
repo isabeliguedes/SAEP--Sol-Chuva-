@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sol Chuva - Previsão do Tempo</title>
+  
+  <!-- Fonte Inter exigida nas orientações gerais -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <header class="cabecalho">
+    <div class="logo-container">
+      <img id="logo-portal" src="" alt="Logo do portal">
+      <h1 id="nome-portal"></h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Seção de Busca -->
+    <section class="secao-busca">
+      <div class="campo-busca-grupo">
+        <input 
+          type="text" 
+          id="input-cidade" 
+          list="lista-cidades" 
+          placeholder="Digite o nome de uma cidade…" 
+          autocomplete="off"
+        >
+        <datalist id="lista-cidades"></datalist>
+        
+        <button type="button" id="btn-buscar">Buscar</button>
+      </div>
+
+      <!-- Botões de acesso rápido (chips) -->
+      <div id="chips-cidades" class="chips-container"></div>
+
+      <!-- Feedbacks para o usuário (Item 3.1, Item 7 e Seção 1.4) -->
+      <p id="indicador-carregamento" class="carregamento oculto">Carregando dados do clima…</p>
+      <p id="mensagem-erro" class="erro oculto" role="alert"></p>
+    </section>
+    <!-- Painel de Resultados (começa oculto até ter dados) -->
+    <div id="painel-resultados" class="oculto">
+      
+      <!-- Item 5: Clima Atual -->
+      <section class="card-clima-atual">
+        <div class="cabecalho-atual">
+          <div>
+            <h2 id="local-nome">--</h2>
+            <p id="local-regiao">--</p>
+          </div>
+          <div class="condicao-atual">
+            <img id="atual-icone" src="" alt="Ícone do clima">
+            <div>
+              <span id="atual-temperatura">--°C</span>
+              <p id="atual-descricao">--</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5.3: Os 7 indicadores detalhados -->
+        <div class="indicadores-grid">
+          <div class="indicador">
+            <span>Sensação térmica</span>
+            <strong id="atual-sensacao">--°C</strong>
+          </div>
+          <div class="indicador">
+            <span>Umidade do ar</span>
+            <strong id="atual-umidade">--%</strong>
+          </div>
+          <div class="indicador">
+            <span>Velocidade do vento</span>
+            <strong id="atual-vento">-- km/h</strong>
+          </div>
+          <div class="indicador">
+            <span>Precipitação</span>
+            <strong id="atual-precipitacao">-- mm</strong>
+          </div>
+          <div class="indicador">
+            <span>Índice UV</span>
+            <strong id="atual-uv">--</strong>
+          </div>
+          <div class="indicador">
+            <span>Nascer do sol</span>
+            <strong id="atual-nascer">--:--</strong>
+          </div>
+          <div class="indicador">
+            <span>Pôr do sol</span>
+            <strong id="atual-por">--:--</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- Item 6: Previsão dos próximos 10 dias -->
+      <section class="secao-previsao">
+        <h3>Previsão para 10 dias</h3>
+        <div id="lista-previsao-dias" class="dias-grid"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Liga o JavaScript no final do body -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+/* Aplica a fonte Inter em todos os elementos da página */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Cores principais do fundo e do texto */
+body {
+  background-color: #FFFFFF;
+  color: #333333;
+  min-height: 100vh;
+}
+
+/* Classe usada pelo JavaScript para esconder elementos */
+.oculto {
+  display: none !important;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  border-bottom: 1px solid #333333;
+  padding: 1.25rem 1.5rem;
+  background-color: #FFFFFF;
+}
+
+.logo-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-container img {
+  width: 36px;
+  height: 36px;
+}
+
+.logo-container h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333333;
+}
+
+/* Container central */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Barra de busca */
+.secao-busca {
+  margin-bottom: 2rem;
+}
+
+.campo-busca-grupo {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.campo-busca-grupo input {
+  flex: 1;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #FFFFFF;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  outline: none;
+}
+
+.campo-busca-grupo input:focus {
+  border: 2px solid #483DAD;
+}
+
+/* Botão Buscar (cores obrigatórias da prova) */
+#btn-buscar {
+  background-color: #483DAD;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 0 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Chips (botões rápidos das cidades) */
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.chip {
+  background-color: #FFFFFF;
+  color: #483DAD;
+  border: 1px solid #483DAD;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.chip:hover {
+  background-color: #483DAD;
+  color: #FFFFFF;
+}
+
+/* Mensagens de status e erro */
+.carregamento {
+  margin-top: 1rem;
+  color: #483DAD;
+  font-weight: 500;
+}
+
+.erro {
+  margin-top: 1rem;
+  color: #FF0000;
+  font-weight: 600;
+}
+
+/* Card do Clima Atual */
+.card-clima-atual {
+  background-color: #FFFFFF;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cabecalho-atual {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #333333;
+  margin-bottom: 1.25rem;
+}
+
+.cabecalho-atual h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.subtitulo {
+  font-size: 0.95rem;
+  color: #333333;
+  margin-top: 0.25rem;
+}
+
+.condicao-atual {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.condicao-atual img {
+  width: 56px;
+  height: 56px;
+}
+
+.temp-destaque {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #483DAD;
+}
+
+/* Grade dos 7 indicadores detalhados */
+.indicadores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.85rem;
+}
+
+.indicador {
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 0.85rem;
+  background-color: #FFFFFF;
+}
+
+.indicador span {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.indicador strong {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* Previsão para 10 dias */
+.secao-previsao h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.dias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.85rem;
+}
+
+.dia-card {
+  border: 1px solid #333333;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.45rem;
+}
+
+.dia-titulo {
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+}
+
+.dia-data {
+  font-size: 0.8rem;
+}
+
+.dia-card img {
+  width: 40px;
+  height: 40px;
+  margin: 0.25rem 0;
+}
+
+.dia-desc {
+  font-size: 0.82rem;
+  min-height: 2.2em;
+}
+
+.dia-temps {
+  font-size: 0.95rem;
+}
+
+.dia-temps strong {
+  color: #483DAD;
+}
+
+.dia-chuva {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
